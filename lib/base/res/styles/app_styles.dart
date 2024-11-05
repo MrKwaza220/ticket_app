@@ -16,5 +16,9 @@ class AppStyles {
     fontWeight: FontWeight.w500,
   );
 
-  
+  // static Icon searchIconStyle = const Icon(
+  //   color: Color(0xFFBFC205),
+  // );
+
+
 }

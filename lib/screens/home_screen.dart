@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ticket_app/base/res/media.dart';
 import 'package:ticket_app/base/res/styles/app_styles.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -24,26 +25,28 @@ class _HomeScreenState extends State<HomeScreen> {
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        const Text(
+                        Text(
                           "Good Morning",
-                          style: TextStyle(
-                              fontSize: 17, 
-                              fontWeight: FontWeight.w500),
+                          style: AppStyles.headLineStyle3,
                         ),
-                        const SizedBox(
+                        const SizedBox( 
                           height: 5,
                         ),
                         Text("Book Ticket",
-                            style: TextStyle(
-                                fontSize: 26,
-                                fontWeight: FontWeight.w500,
-                                color: AppStyles.textColor))
+                            style: AppStyles.headLineStyle1)
                       ],
                     ),
                     Container(
-                      color: Colors.black,
-                      width: 100,
-                      height: 70,
+                      width: 50,
+                      height:50,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        image: const DecorationImage(
+                          image: AssetImage(
+                            AppMedia.ticketLogo
+                          )
+                        )
+                      ),
                     )
                   ],
                 ),

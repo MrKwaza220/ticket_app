@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ticket_app/base/res/styles/app_styles.dart';
+import 'package:ticket_app/base/res/widgtes/app_layout_widget.dart';
 import 'package:ticket_app/base/res/widgtes/big_dot.dart';
 
 class TicketView extends StatelessWidget {
@@ -23,9 +24,7 @@ class TicketView extends StatelessWidget {
         child: Column(
           children: [
             Row(
-
               children: [
-
                 Text(
                   "CPT", style: AppStyles.headLineStyle3.copyWith(color: Colors.white),
                 ),
@@ -34,7 +33,7 @@ class TicketView extends StatelessWidget {
                 const Expanded(child: Stack(
                   children: [
                     SizedBox(
-                      child: Text("....."),
+                      child: AppLayoutWidget(randomDivider: 6,),
                     ),
                     Center(
                       child: Text("Plane"),

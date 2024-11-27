@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:ticket_app/base/res/media.dart';
 import 'package:ticket_app/base/res/styles/app_styles.dart';
 import 'package:ticket_app/base/res/widgtes/app_double_text.dart';
+import 'package:ticket_app/base/res/widgtes/ticket_view.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -71,6 +72,8 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
                 const SizedBox(height: 40,),
                 const AppDoubleText(bigText: 'Upcoming Flights', smallText: 'View all',),
+                const SizedBox(height: 15,),
+                const TicketView()
               ],
             ),
           ),

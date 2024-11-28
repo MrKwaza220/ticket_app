@@ -95,9 +95,9 @@ class TicketView extends StatelessWidget {
                 color: AppStyles.ticketOrange,
                 child: Row(
                   children: [ 
-                    const BigCircle(),
+                    const BigCircle(isRight: false,),
                     Expanded(child: Container()),
-                    const BigCircle()
+                    const BigCircle(isRight: true,)
                   ],
                 ),
               ),

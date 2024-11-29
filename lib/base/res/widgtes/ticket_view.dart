@@ -18,12 +18,14 @@ class TicketView extends StatelessWidget {
           margin: const EdgeInsets.only(right: 16),
           child: Column(
             children: [
+              // Blue part of the ticket
               Container(
                 padding: const EdgeInsets.all(16),
                 decoration: BoxDecoration(
                     color: AppStyles.ticketBlue,
                     borderRadius: const BorderRadius.only(
-                        topLeft: Radius.circular(21), topRight: Radius.circular(21))),
+                        topLeft: Radius.circular(21),
+                        topRight: Radius.circular(21))),
                 child: Column(
                   children: [
                     //Departure with Icons
@@ -31,8 +33,8 @@ class TicketView extends StatelessWidget {
                       children: [
                         Text(
                           "CPT",
-                          style:
-                              AppStyles.headLineStyle3.copyWith(color: Colors.white),
+                          style: AppStyles.headLineStyle3
+                              .copyWith(color: Colors.white),
                         ),
                         Expanded(child: Container()),
                         const BigDot(),
@@ -59,119 +61,118 @@ class TicketView extends StatelessWidget {
                         Expanded(child: Container()),
                         Text(
                           "GP",
-                          style:
-                              AppStyles.headLineStyle3.copyWith(color: Colors.white),
+                          style: AppStyles.headLineStyle3
+                              .copyWith(color: Colors.white),
                         ),
                       ],
                     ),
                     //Departure with names and times
-                    const SizedBox(height: 3,),
+                    const SizedBox(
+                      height: 3,
+                    ),
                     Row(
                       children: [
                         Text(
                           "Cape Town",
-                          style:
-                              AppStyles.headLineStyle3.copyWith(color: Colors.white),
+                          style: AppStyles.headLineStyle4
+                              .copyWith(color: Colors.white),
                         ),
                         Expanded(child: Container()),
                         Text(
                           "08:00am",
-                          style:
-                              AppStyles.headLineStyle3.copyWith(color: Colors.white),
-                          ),                  
+                          style: AppStyles.headLineStyle4
+                              .copyWith(color: Colors.white),
+                        ),
                         Expanded(child: Container()),
                         Text(
                           "Gauteng",
-                          style:
-                              AppStyles.headLineStyle3.copyWith(color: Colors.white),
+                          style: AppStyles.headLineStyle4
+                              .copyWith(color: Colors.white),
                         ),
                       ],
                     )
                   ],
                 ),
               ),
+              //circles and dot
               Container(
-                
                 color: AppStyles.ticketOrange,
-                child: Row(
-                  children: [ 
-                    const BigCircle(isRight: false,),
-                    Expanded(child: Container()),
-                    const BigCircle(isRight: true,)
+                child: const Row(
+                  children: [
+                    BigCircle(
+                      isRight: false,
+                    ),
+                    Expanded(
+                        child: AppLayoutWidget(randomDivider: 20, width: 8)),
+                    BigCircle(
+                      isRight: true,
+                    )
                   ],
                 ),
               ),
-
+              //Orange
               Container(
                 padding: const EdgeInsets.all(16),
                 decoration: BoxDecoration(
                     color: AppStyles.ticketOrange,
                     borderRadius: const BorderRadius.only(
-                        bottomLeft: Radius.circular(21), bottomRight: Radius.circular(21))),
+                        bottomLeft: Radius.circular(21),
+                        bottomRight: Radius.circular(21))),
                 child: Column(
                   children: [
                     //Departure with Icons
                     Row(
                       children: [
                         Text(
-                          "CPT",
-                          style:
-                              AppStyles.headLineStyle3.copyWith(color: Colors.white),
+                          "1 Dec",
+                          style: AppStyles.headLineStyle3
+                              .copyWith(color: Colors.white),
                         ),
                         Expanded(child: Container()),
-                        const BigDot(),
                         Expanded(
                             child: Stack(
                           children: [
-                            const SizedBox(
-                              height: 24,
-                              child: AppLayoutWidget(
-                                randomDivider: 6,
-                              ),
-                            ),
+                            
                             Center(
-                              child: Transform.rotate(
-                                  angle: 1.5,
-                                  child: const Icon(
-                                    Icons.local_airport_rounded,
-                                    color: Colors.white,
-                                  )),
+                              child: Text("08:00 AM", style: AppStyles.headLineStyle3.copyWith(color: Colors.white) ,),
                             )
                           ],
                         )),
-                        const BigDot(),
                         Expanded(child: Container()),
                         Text(
-                          "GP",
-                          style:
-                              AppStyles.headLineStyle3.copyWith(color: Colors.white),
+                          "24",
+                          style: AppStyles.headLineStyle3
+                              .copyWith(color: Colors.white),
                         ),
                       ],
                     ),
                     //Departure with names and times
-                    const SizedBox(height: 3,),
+                    const SizedBox(
+                      height: 3,
+                    ),
                     Row(
                       children: [
                         Text(
-                          "Cape Town",
-                          style:
-                              AppStyles.headLineStyle3.copyWith(color: Colors.white),
+                          "Date",
+                          style: AppStyles.headLineStyle3
+                              .copyWith(color: Colors.white),
+                        ),
+                        Expanded(child: Container()),
+                        Center(
+                          child: Text(
+                            "Departure time",
+                            style: AppStyles.headLineStyle3
+                                .copyWith(color: Colors.white),
+                          ),
                         ),
                         Expanded(child: Container()),
                         Text(
-                          "08:00am",
-                          style:
-                              AppStyles.headLineStyle3.copyWith(color: Colors.white),
-                          ),                  
-                        Expanded(child: Container()),
-                        Text(
-                          "Gauteng",
-                          style:
-                              AppStyles.headLineStyle3.copyWith(color: Colors.white),
+                          "Number",
+                          style: AppStyles.headLineStyle3
+                              .copyWith(color: Colors.white),
                         ),
                       ],
                     )
-
                   ],
                 ),
               ),

@@ -10,7 +10,7 @@ class TextStyleFourth extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Text(
-      "CPT",
+      text,
       textAlign: align,
       style: AppStyles.headLineStyle4.copyWith(color: Colors.white),
     );

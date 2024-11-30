@@ -3,6 +3,10 @@ import 'package:ticket_app/base/res/styles/app_styles.dart';
 import 'package:ticket_app/base/res/widgtes/app_layout_widget.dart';
 import 'package:ticket_app/base/res/widgtes/big_circle.dart';
 import 'package:ticket_app/base/res/widgtes/big_dot.dart';
+import 'package:ticket_app/base/res/widgtes/text_column_layout.dart';
+import 'package:ticket_app/base/res/widgtes/text_style_firth.dart';
+import 'package:ticket_app/base/res/widgtes/text_style_fourth.dart';
+import 'package:ticket_app/base/res/widgtes/text_style_third.dart';
 
 class TicketView extends StatelessWidget {
   const TicketView({super.key});
@@ -31,11 +35,7 @@ class TicketView extends StatelessWidget {
                     //Departure with Icons
                     Row(
                       children: [
-                        Text(
-                          "CPT",
-                          style: AppStyles.headLineStyle3
-                              .copyWith(color: Colors.white),
-                        ),
+                        const TextStyleThird(text: "CPT"),
                         Expanded(child: Container()),
                         const BigDot(),
                         Expanded(
@@ -59,11 +59,7 @@ class TicketView extends StatelessWidget {
                         )),
                         const BigDot(),
                         Expanded(child: Container()),
-                        Text(
-                          "GP",
-                          style: AppStyles.headLineStyle3
-                              .copyWith(color: Colors.white),
-                        ),
+                        const TextStyleThird(text: "GP"),
                       ],
                     ),
                     //Departure with names and times
@@ -72,23 +68,11 @@ class TicketView extends StatelessWidget {
                     ),
                     Row(
                       children: [
-                        Text(
-                          "Cape Town",
-                          style: AppStyles.headLineStyle4
-                              .copyWith(color: Colors.white),
-                        ),
+                        const TextStyleFourth(text: "CPT"),
                         Expanded(child: Container()),
-                        Text(
-                          "08:00am",
-                          style: AppStyles.headLineStyle4
-                              .copyWith(color: Colors.white),
-                        ),
+                        const TextStyleFourth(text: "08:00AM"),
                         Expanded(child: Container()),
-                        Text(
-                          "Gauteng",
-                          style: AppStyles.headLineStyle4
-                              .copyWith(color: Colors.white),
-                        ),
+                        const TextStyleFourth(text: "Gauteng"),
                       ],
                     )
                   ],
@@ -118,64 +102,26 @@ class TicketView extends StatelessWidget {
                     borderRadius: const BorderRadius.only(
                         bottomLeft: Radius.circular(21),
                         bottomRight: Radius.circular(21))),
-                child: Column(
+                child: const Column(
                   children: [
                     //Departure with Icons
                     Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text(
-                          "1 Dec",
-                          style: AppStyles.headLineStyle5
-                              .copyWith(color: Colors.white),
-                        ),
-                        Expanded(child: Container()),
-                        Expanded(
-                            child: Stack(
-                          children: [
-                            Center(
-                              child: Text(
-                                "08:00 AM",
-                                style: AppStyles.headLineStyle5
-                                    .copyWith(color: Colors.white),
-                              ),
-                            )
-                          ],
-                        )),
-                        Expanded(child: Container()),
-                        Text(
-                          "24",
-                          style: AppStyles.headLineStyle5
-                              .copyWith(color: Colors.white),
-                        ),
+                        TextColumnLayout(
+                            topText: "1 May",
+                            bottomText: "Date",
+                            alignment: CrossAxisAlignment.start),
+                        TextColumnLayout(
+                            topText: "08:00 am",
+                            bottomText: "Departure",
+                            alignment: CrossAxisAlignment.center),
+                        TextColumnLayout(
+                            topText: "35",
+                            bottomText: "Number",
+                            alignment: CrossAxisAlignment.end),
                       ],
                     ),
-                    //Departure with names and times
-                    const SizedBox(
-                      height: 2,
-                    ),
-                    Row(
-                      children: [
-                        Text(
-                          "Date",
-                          style: AppStyles.headLineStyle5
-                              .copyWith(color: Colors.white),
-                        ),
-                        Expanded(child: Container()),
-                        Center(
-                          child: Text(
-                            "Departure time",
-                            style: AppStyles.headLineStyle5
-                                .copyWith(color: Colors.white),
-                          ),
-                        ),
-                        Expanded(child: Container()),
-                        Text(
-                          "Number",
-                          style: AppStyles.headLineStyle5
-                              .copyWith(color: Colors.white),
-                        ),
-                      ],
-                    )
                   ],
                 ),
               ),

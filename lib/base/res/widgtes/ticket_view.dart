@@ -13,7 +13,7 @@ class TicketView extends StatelessWidget {
 
     return SizedBox(
         width: size.width * 0.85,
-        height: 179,
+        height: 200,
         child: Container(
           margin: const EdgeInsets.only(right: 16),
           child: Column(
@@ -125,50 +125,53 @@ class TicketView extends StatelessWidget {
                       children: [
                         Text(
                           "1 Dec",
-                          style: AppStyles.headLineStyle3
+                          style: AppStyles.headLineStyle5
                               .copyWith(color: Colors.white),
                         ),
                         Expanded(child: Container()),
                         Expanded(
                             child: Stack(
                           children: [
-                            
                             Center(
-                              child: Text("08:00 AM", style: AppStyles.headLineStyle3.copyWith(color: Colors.white) ,),
+                              child: Text(
+                                "08:00 AM",
+                                style: AppStyles.headLineStyle5
+                                    .copyWith(color: Colors.white),
+                              ),
                             )
                           ],
                         )),
                         Expanded(child: Container()),
                         Text(
                           "24",
-                          style: AppStyles.headLineStyle3
+                          style: AppStyles.headLineStyle5
                               .copyWith(color: Colors.white),
                         ),
                       ],
                     ),
                     //Departure with names and times
                     const SizedBox(
-                      height: 3,
+                      height: 2,
                     ),
                     Row(
                       children: [
                         Text(
                           "Date",
-                          style: AppStyles.headLineStyle3
+                          style: AppStyles.headLineStyle5
                               .copyWith(color: Colors.white),
                         ),
                         Expanded(child: Container()),
                         Center(
                           child: Text(
                             "Departure time",
-                            style: AppStyles.headLineStyle3
+                            style: AppStyles.headLineStyle5
                                 .copyWith(color: Colors.white),
                           ),
                         ),
                         Expanded(child: Container()),
                         Text(
                           "Number",
-                          style: AppStyles.headLineStyle3
+                          style: AppStyles.headLineStyle5
                               .copyWith(color: Colors.white),
                         ),
                       ],

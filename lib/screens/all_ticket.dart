@@ -9,7 +9,7 @@ class AllTicket extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Center(child: Text("All Tickets")),
+        title: const Text("All Tickets"),
       ),
       body: ListView(
         children: [
@@ -17,7 +17,7 @@ class AllTicket extends StatelessWidget {
             child: Column(
               children: 
               ticketList.map((singleTicket) => 
-              TicketView(ticket: singleTicket)).toList(),
+              TicketView(ticket: singleTicket, wholeScreen: true,)).toList(),
             ),
           )
         ],

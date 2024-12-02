@@ -80,7 +80,9 @@ class _HomeScreenState extends State<HomeScreen> {
                     children: ticketList.take(3).map((singleTicket){
                       return TicketView(ticket:singleTicket,);
                     }).toList(),
-                  ))
+                  )),
+                const SizedBox(height: 20,),
+                const AppDoubleText(bigText: 'Hotels', smallText: 'View all',),
               ],
             ),
           ),

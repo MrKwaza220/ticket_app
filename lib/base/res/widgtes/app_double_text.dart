@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:ticket_app/base/res/styles/app_styles.dart';
-import 'package:ticket_app/screens/all_ticket.dart';
 
 class AppDoubleText extends StatelessWidget {
   const AppDoubleText(
@@ -19,12 +18,7 @@ class AppDoubleText extends StatelessWidget {
         ),
         InkWell(
           onTap: () {
-            Navigator.push<void>(
-              context,
-              MaterialPageRoute (
-                builder: (BuildContext context) => const AllTicket(),
-              ),
-            );
+            Navigator.pushNamed(context, "/all_tickets");
           },
           child: Text(
             smallText,

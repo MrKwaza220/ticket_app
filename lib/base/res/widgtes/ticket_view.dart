@@ -4,12 +4,12 @@ import 'package:ticket_app/base/res/widgtes/app_layout_widget.dart';
 import 'package:ticket_app/base/res/widgtes/big_circle.dart';
 import 'package:ticket_app/base/res/widgtes/big_dot.dart';
 import 'package:ticket_app/base/res/widgtes/text_column_layout.dart';
-import 'package:ticket_app/base/res/widgtes/text_style_firth.dart';
 import 'package:ticket_app/base/res/widgtes/text_style_fourth.dart';
 import 'package:ticket_app/base/res/widgtes/text_style_third.dart';
 
 class TicketView extends StatelessWidget {
-  const TicketView({super.key});
+  final Map<String, dynamic> ticket; 
+  const TicketView({super.key, required this.ticket});
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +35,7 @@ class TicketView extends StatelessWidget {
                     //Departure with Icons
                     Row(
                       children: [
-                        const TextStyleThird(text: "CPT"),
+                        TextStyleThird(text: ticket["from"]["code"]),
                         Expanded(child: Container()),
                         const BigDot(),
                         Expanded(
@@ -59,7 +59,7 @@ class TicketView extends StatelessWidget {
                         )),
                         const BigDot(),
                         Expanded(child: Container()),
-                        const TextStyleThird(text: "GP"),
+                        TextStyleThird(text: ticket["to"]["code"]),
                       ],
                     ),
                     //Departure with names and times
@@ -68,11 +68,11 @@ class TicketView extends StatelessWidget {
                     ),
                     Row(
                       children: [
-                        const TextStyleFourth(text: "CPT"),
+                        TextStyleFourth(text: ticket["from"]["name"]),
                         Expanded(child: Container()),
-                        const TextStyleFourth(text: "08:00AM"),
+                        TextStyleFourth(text: ticket["flying_time"]),
                         Expanded(child: Container()),
-                        const TextStyleFourth(text: "Gauteng"),
+                        TextStyleFourth(text: ticket["to"]["name"]),
                       ],
                     )
                   ],
@@ -102,22 +102,22 @@ class TicketView extends StatelessWidget {
                     borderRadius: const BorderRadius.only(
                         bottomLeft: Radius.circular(21),
                         bottomRight: Radius.circular(21))),
-                child: const Column(
+                child: Column(
                   children: [
                     //Departure with Icons
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         TextColumnLayout(
-                            topText: "1 May",
+                            topText: ticket["date"],
                             bottomText: "Date",
                             alignment: CrossAxisAlignment.start),
                         TextColumnLayout(
-                            topText: "08:00 am",
+                            topText: ticket["departure_time"],
                             bottomText: "Departure",
                             alignment: CrossAxisAlignment.center),
                         TextColumnLayout(
-                            topText: "35",
+                            topText: ticket["number"].toString(),
                             bottomText: "Number",
                             alignment: CrossAxisAlignment.end),
                       ],

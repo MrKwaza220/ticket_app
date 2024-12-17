@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ticket_app/base/bottom_nav__bar.dart';
-import 'package:ticket_app/screens/all_ticket.dart';
+import 'package:ticket_app/screens/home/all_ticket.dart';
 
 void main() {
   runApp(const MyApp());

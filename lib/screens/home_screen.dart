@@ -86,7 +86,15 @@ class _HomeScreenState extends State<HomeScreen> {
                 const SizedBox(height: 20,),
                 const AppDoubleText(bigText: 'Hotels', smallText: 'View all',),
                 const SizedBox(height: 10,),
-                const Hotel(),
+                const SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    children: [
+                      Hotel(),
+                      Hotel(),
+                    ],
+                  ),
+                )
               ],
             ),
           ),

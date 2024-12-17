@@ -12,6 +12,7 @@ class Hotel extends StatelessWidget {
       padding: const EdgeInsets.all(8.0),
       width: size.width * 0.6,
       height: 330,
+      margin: const EdgeInsets.all(16),
       decoration: BoxDecoration(
           color: AppStyles.primaryColor,
           borderRadius: BorderRadius.circular(20)),

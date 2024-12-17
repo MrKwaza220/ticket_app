@@ -15,14 +15,49 @@ class Hotel extends StatelessWidget {
           color: AppStyles.primaryColor,
           borderRadius: BorderRadius.circular(20)),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
+            height: 180,
             decoration: BoxDecoration(
                 color: AppStyles.primaryColor,
                 borderRadius: BorderRadius.circular(12),
                 image: const DecorationImage(
                     fit: BoxFit.cover, image: AssetImage(AppMedia.hotelRoom))),
-          )
+          ),
+          const SizedBox(
+            height: 10,
+          ),
+          Padding(
+            padding: const EdgeInsets.only(left: 15),
+            child: Text(
+              "Open Space",
+              style:
+                  AppStyles.headLineStyle1.copyWith(color: AppStyles.kakiColor),
+            ),
+          ),
+          const SizedBox(
+            height: 5,
+          ),
+          Padding(
+            padding: const EdgeInsets.only(left: 15),
+            child: Text(
+              "East London",
+              style:
+                  AppStyles.headLineStyle3.copyWith(color: AppStyles.kakiColor),
+            ),
+          ),
+          const SizedBox(
+            height: 5,
+          ),
+          Padding(
+            padding: const EdgeInsets.only(left: 15),
+            child: Text(
+              "R250/night",
+              style:
+                  AppStyles.headLineStyle1.copyWith(color: AppStyles.kakiColor),
+            ),
+          ),
         ],
       ),
     );

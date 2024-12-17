@@ -3,7 +3,8 @@ import 'package:ticket_app/base/res/media.dart';
 import 'package:ticket_app/base/res/styles/app_styles.dart';
 
 class Hotel extends StatelessWidget {
-  const Hotel({super.key});
+  final Map<String, dynamic> hotel;
+  const Hotel({super.key, required this.hotel});
 
   @override
   Widget build(BuildContext context) {
@@ -24,8 +25,13 @@ class Hotel extends StatelessWidget {
             decoration: BoxDecoration(
                 color: AppStyles.primaryColor,
                 borderRadius: BorderRadius.circular(12),
-                image: const DecorationImage(
-                    fit: BoxFit.cover, image: AssetImage(AppMedia.hotelRoom))),
+                image: DecorationImage(
+                    fit: BoxFit.cover, 
+                    image: AssetImage(
+                      "assets/images/${hotel['image']}"
+                      )
+                )
+         ),
           ),
           const SizedBox(
             height: 10,
@@ -33,7 +39,7 @@ class Hotel extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.only(left: 15),
             child: Text(
-              "Open Space",
+              hotel['place'],
               style:
                   AppStyles.headLineStyle1.copyWith(color: AppStyles.kakiColor),
             ),
@@ -44,9 +50,9 @@ class Hotel extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.only(left: 15),
             child: Text(
-              "East London",
+              hotel['destination'],
               style:
-                  AppStyles.headLineStyle3.copyWith(color: AppStyles.kakiColor),
+                  AppStyles.headLineStyle3.copyWith(color: Colors.white),
             ),
           ),
           const SizedBox(
@@ -55,7 +61,7 @@ class Hotel extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.only(left: 15),
             child: Text(
-              "R250/night",
+              "R${hotel['price']}/night",
               style:
                   AppStyles.headLineStyle1.copyWith(color: AppStyles.kakiColor),
             ),

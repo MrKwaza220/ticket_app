@@ -80,9 +80,13 @@ class SearchScreen extends StatelessWidget {
                             ))
                       ),
                     ),
+                    const SizedBox(height: 12,),
+                    Text("20% discount on the early booking of this flight. Don't miss",
+                    style: AppStyles.headLineStyle2,)
                   ],
                 ),
-              )
+              ),
+              
             ],
           )
         ],

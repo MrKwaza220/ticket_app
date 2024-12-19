@@ -25,6 +25,15 @@ class TicketScreen extends StatelessWidget {
           Container(
             padding: const EdgeInsets.only(left: 16),
             child: TicketView(ticket: ticketList[0], isColor: true,)),
+          Container(
+            color: AppStyles.ticketColor,
+            child: Column(
+              children: [
+                Row(
+                  
+                )
+            ],),
+          ),
         ],
       ),
     );

@@ -23,7 +23,7 @@ class TicketView extends StatelessWidget {
 
     return SizedBox(
         width: size.width * 0.85,
-        height: 200,
+        height: 165,
         child: Container(
           margin: EdgeInsets.only(right: wholeScreen == true ? 0 : 16),
           child: Column(

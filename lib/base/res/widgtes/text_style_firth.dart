@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:ticket_app/base/res/styles/app_styles.dart';
 
 class TextStyleFirth extends StatelessWidget {
-  const TextStyleFirth({super.key, required this.text, this.align = TextAlign.start});
+  const TextStyleFirth({super.key, required this.text, this.align = TextAlign.start, bool? isColor});
 
   final String text;
   final TextAlign align;

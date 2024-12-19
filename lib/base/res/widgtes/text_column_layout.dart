@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ticket_app/base/res/widgtes/text_style_firth.dart';
+import 'package:ticket_app/base/res/widgtes/text_style_fourth.dart';
 
 class TextColumnLayout extends StatelessWidget {
   const TextColumnLayout(
@@ -19,7 +20,7 @@ class TextColumnLayout extends StatelessWidget {
       crossAxisAlignment: alignment,
       children: [
         TextStyleFirth(text: topText, isColor: isColor,),
-        TextStyleFirth(text: bottomText, isColor: isColor,),
+        TextStyleFourth(text: bottomText, isColor: isColor,),
       ],
     );
   }

@@ -15,24 +15,28 @@ class TicketScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppStyles.bgColor,
+      appBar: AppBar(
+        title: const Text("Ticket"),
+        backgroundColor: AppStyles.bgColor,
+      ),
       body: Stack(
         children: [
           ListView(
             padding: const EdgeInsets.symmetric(
               horizontal: 20,
-              vertical: 20,
+              vertical: 0,
             ),
             children: [
-              const SizedBox(
-                height: 40,
-              ),
-              Text(
-                "Tickets",
-                style: AppStyles.headLineStyle1,
-              ),
-              const SizedBox(
-                height: 20,
-              ),
+              // const SizedBox(
+              //   height: 40,
+              // ),
+              // Text(
+              //   "Tickets",
+              //   style: AppStyles.headLineStyle1,
+              // ),
+              // const SizedBox(
+              //   height: 20,
+              // ),
               const AppTicketTabs(
                 firstTab: "Upcoming",
                 secondTab: "Previous",

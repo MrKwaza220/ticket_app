@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:ticket_app/base/res/media.dart';
 import 'package:ticket_app/base/res/styles/app_styles.dart';
 import 'package:ticket_app/base/res/widgtes/app_double_text.dart';
+import 'package:ticket_app/base/res/widgtes/app_routes.dart';
 import 'package:ticket_app/base/res/widgtes/ticket_view.dart';
 import 'package:ticket_app/base/utils/all_json.dart';
 import 'package:ticket_app/screens/home/widgets/hotel.dart';
@@ -74,7 +75,10 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ),
                 const SizedBox(height: 40,),
-                const AppDoubleText(bigText: 'Upcoming Flights', smallText: 'View all',),
+                AppDoubleText(bigText: 'Upcoming Flights', smallText: 'View all',
+                func: (){
+                  Navigator.pushNamed(context, AppRoutes.allTickets);
+                }),
                 const SizedBox(height: 15,),
                 SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
@@ -83,9 +87,16 @@ class _HomeScreenState extends State<HomeScreen> {
                       return TicketView(ticket:singleTicket,);
                     }).toList(),
                   )),
+
                 const SizedBox(height: 20,),
-                const AppDoubleText(bigText: 'Hotels', smallText: 'View all',),
+
+                AppDoubleText(bigText: 'Hotels', smallText: 'View all',
+                func: (){
+                  Navigator.pushNamed(context, AppRoutes.allHotels);
+                }),
+
                 const SizedBox(height: 10,),
+
                 SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
                   child: Row(

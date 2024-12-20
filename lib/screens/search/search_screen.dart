@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ticket_app/base/res/styles/app_styles.dart';
 import 'package:ticket_app/base/res/widgtes/app_double_text.dart';
+import 'package:ticket_app/base/res/widgtes/app_routes.dart';
 import 'package:ticket_app/screens/search/widgets/app_text_icon.dart';
 import 'package:ticket_app/screens/search/widgets/app_ticket_tabs.dart';
 import 'package:ticket_app/screens/search/widgets/find_tickets.dart';
@@ -46,9 +47,12 @@ class SearchScreen extends StatelessWidget {
           const SizedBox(
             height: 20,
           ),
-          const AppDoubleText(
+          AppDoubleText(
             bigText: 'Upcoming Flights',
             smallText: 'View all',
+            func: () {
+              Navigator.pushNamed(context, AppRoutes.allHotels);
+            },
           ),
           const SizedBox(
             height: 15,

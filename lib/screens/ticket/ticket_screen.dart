@@ -8,10 +8,23 @@ import 'package:ticket_app/screens/search/widgets/app_ticket_tabs.dart';
 import 'package:barcode_widget/barcode_widget.dart';
 import 'package:ticket_app/screens/ticket/widgets/ticket_position_circle.dart';
 
-class TicketScreen extends StatelessWidget {
+class TicketScreen extends StatefulWidget {
   const TicketScreen({super.key});
 
   @override
+  State<TicketScreen> createState() => _TicketScreenState();
+}
+
+class _TicketScreenState extends State<TicketScreen> {
+  late int ticketIndex = 0;
+
+  @override
+  void didChangeDependencies() {
+    var args = ModalRoute.of(context)!.settings.arguments as Map;
+    ticketIndex = args["index"];
+    super.didChangeDependencies();
+  }
+
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppStyles.bgColor,
@@ -47,13 +60,14 @@ class TicketScreen extends StatelessWidget {
               Container(
                   padding: const EdgeInsets.only(left: 16),
                   child: TicketView(
-                    ticket: ticketList[0],
+                    ticket: ticketList[ticketIndex],
                     isColor: true,
                   )),
-          
+
               Container(
                 margin: const EdgeInsets.symmetric(horizontal: 15),
-                padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
                 color: AppStyles.ticketColor,
                 child: Column(
                   children: [
@@ -98,7 +112,7 @@ class TicketScreen extends StatelessWidget {
                         ),
                       ],
                     ),
-                     const SizedBox(
+                    const SizedBox(
                       height: 20,
                     ),
                     const AppLayoutWidget(randomDivider: 15, isColor: true),
@@ -108,18 +122,22 @@ class TicketScreen extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                         Column(
+                        Column(
                           children: [
                             const Row(
                               children: [
-                                Text("VISA", style: TextStyle(color: Colors.blue)),
+                                Text("VISA",
+                                    style: TextStyle(color: Colors.blue)),
                                 //Image.asset(AppMedia.visaCard, scale: 11,),
                                 Text("**** 4356")
                               ],
                             ),
-                            Text("Payment Method", style: AppStyles.headLineStyle4,),
+                            Text(
+                              "Payment Method",
+                              style: AppStyles.headLineStyle4,
+                            ),
                           ],
-                         ),
+                        ),
                         const TextColumnLayout(
                           topText: "R259.00",
                           bottomText: "Price",
@@ -137,14 +155,14 @@ class TicketScreen extends StatelessWidget {
               //Bottom of the ticket
               Container(
                 margin: const EdgeInsets.symmetric(horizontal: 15),
-                padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
                 decoration: BoxDecoration(
-                  color: AppStyles.ticketColor,
-                  borderRadius: const BorderRadius.only(
-                    bottomLeft: Radius.circular(21),
-                    bottomRight: Radius.circular(21),
-                  )
-                ),
+                    color: AppStyles.ticketColor,
+                    borderRadius: const BorderRadius.only(
+                      bottomLeft: Radius.circular(21),
+                      bottomRight: Radius.circular(21),
+                    )),
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(15),
                   child: BarcodeWidget(
@@ -160,10 +178,10 @@ class TicketScreen extends StatelessWidget {
               const SizedBox(
                 height: 20,
               ),
-               Container(
+              Container(
                   padding: const EdgeInsets.only(left: 16),
                   child: TicketView(
-                    ticket: ticketList[0],
+                    ticket: ticketList[ticketIndex],
                   )),
             ],
           ),

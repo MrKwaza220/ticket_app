@@ -1,10 +1,6 @@
-import 'package:flutter/material.dart';
+class AppRoutes {
+  static const homePage = "/";
+  static const allTickets = "/all_tickets";
+  static const ticketScreen = "/ticket_view";
 
-class AppRoutes extends StatelessWidget {
-  const AppRoutes({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const Placeholder();
-  }
 }

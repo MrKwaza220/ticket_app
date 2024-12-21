@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:ticket_app/base/res/media.dart';
 import 'package:ticket_app/base/res/styles/app_styles.dart';
 import 'package:ticket_app/base/res/widgtes/app_double_text.dart';
+import 'package:ticket_app/base/res/widgtes/app_double_text_two.dart';
 import 'package:ticket_app/base/res/widgtes/app_routes.dart';
 import 'package:ticket_app/base/res/widgtes/ticket_view.dart';
 import 'package:ticket_app/base/utils/all_json.dart';
@@ -90,7 +91,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
                 const SizedBox(height: 20,),
 
-                AppDoubleText(bigText: 'Hotels', smallText: 'View all',
+                AppDoubleTextTwo(bigText: 'Hotels', smallText: 'View all',
                 func: (){
                   Navigator.pushNamed(context, AppRoutes.allHotels);
                 }),

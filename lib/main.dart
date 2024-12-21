@@ -3,6 +3,7 @@ import 'package:ticket_app/base/bottom_nav__bar.dart';
 import 'package:ticket_app/base/res/widgtes/app_routes.dart';
 import 'package:ticket_app/screens/home/all_hotels.dart';
 import 'package:ticket_app/screens/home/all_ticket.dart';
+import 'package:ticket_app/screens/ticket/hotel_detail.dart';
 import 'package:ticket_app/screens/ticket/ticket_screen.dart';
 
 void main() {
@@ -21,6 +22,7 @@ class MyApp extends StatelessWidget {
         AppRoutes.allTickets: (context) => const AllTicket(),
         AppRoutes.ticketScreen: (context) => const TicketScreen(),
         AppRoutes.allHotels: (context) => const AllHotels(),
+        AppRoutes.hotelDetail: (context) => const HotelDetail(),
       },
     );
   }

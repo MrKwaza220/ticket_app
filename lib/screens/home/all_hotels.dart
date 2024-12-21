@@ -14,20 +14,23 @@ class AllHotels extends StatelessWidget {
         title: const Text("All Hotels"),
         backgroundColor: AppStyles.bgColor,
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: GridView.builder(
-            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 2,
-              crossAxisSpacing: 16.0,
-              mainAxisSpacing: 16.0,
-              childAspectRatio: 0.7,
-            ),
-            itemCount: hotelList.length,
-            itemBuilder: (context, index) {
-              var singleHotel = hotelList[index];
-              return Hotel(hotel:singleHotel, );
-            }),
+      body: Container(
+        margin: const EdgeInsets.all(8.0),
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: GridView.builder(
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2,
+                crossAxisSpacing: 16.0,
+                mainAxisSpacing: 16.0,
+                childAspectRatio: 0.9,
+              ),
+              itemCount: hotelList.length,
+              itemBuilder: (context, index) {
+                var singleHotel = hotelList[index];
+                return Hotel(hotel:singleHotel, );
+              }),
+        ),
       ),
     );
   }
@@ -42,27 +45,30 @@ class HotelGridView extends StatelessWidget {
     final size = MediaQuery.of(context).size;
     return Container(
       padding: const EdgeInsets.all(8.0),
-      width: size.width * 0.6,
+      //width: size.width * 0.6,
       height: 330,
-      margin: const EdgeInsets.all(16),
+      margin: const EdgeInsets.only(right: 8),
       decoration: BoxDecoration(
           color: AppStyles.primaryColor,
           borderRadius: BorderRadius.circular(20)),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Container(
-            height: 180,
-            decoration: BoxDecoration(
-                color: AppStyles.primaryColor,
-                borderRadius: BorderRadius.circular(12),
-                image: DecorationImage(
-                    fit: BoxFit.cover, 
-                    image: AssetImage(
-                      "assets/images/${hotel['image']}"
-                      )
-                )
-         ),
+          AspectRatio(
+            aspectRatio: 1.2,
+            child: Container(
+              
+              decoration: BoxDecoration(
+                  color: AppStyles.primaryColor,
+                  borderRadius: BorderRadius.circular(12),
+                  image: DecorationImage(
+                      fit: BoxFit.cover, 
+                      image: AssetImage(
+                        "assets/images/${hotel['image']}"
+                        )
+                  )
+                     ),
+            ),
           ),
           const SizedBox(
             height: 10,
@@ -72,13 +78,15 @@ class HotelGridView extends StatelessWidget {
             child: Text(
               hotel['place'],
               style:
-                  AppStyles.headLineStyle1.copyWith(color: AppStyles.kakiColor),
+                  AppStyles.headLineStyle3.copyWith(color: AppStyles.kakiColor),
             ),
           ),
           const SizedBox(
             height: 5,
           ),
-          Padding(
+          Row(
+            children: [
+              Padding(
             padding: const EdgeInsets.only(left: 15),
             child: Text(
               hotel['destination'],
@@ -86,17 +94,17 @@ class HotelGridView extends StatelessWidget {
                   AppStyles.headLineStyle3.copyWith(color: Colors.white),
             ),
           ),
-          const SizedBox(
-            height: 5,
-          ),
+          
           Padding(
             padding: const EdgeInsets.only(left: 15),
             child: Text(
               "R${hotel['price']}/night",
               style:
-                  AppStyles.headLineStyle1.copyWith(color: AppStyles.kakiColor),
+                  AppStyles.headLineStyle4.copyWith(color: AppStyles.kakiColor),
             ),
           ),
+            ],
+          )
         ],
       ),
     );

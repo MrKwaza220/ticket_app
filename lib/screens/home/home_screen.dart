@@ -100,6 +100,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
                 SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
+                  
                   child: Row(
                     children: hotelList
                     .take(3)
